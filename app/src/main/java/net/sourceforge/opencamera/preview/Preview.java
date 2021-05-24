@@ -3714,6 +3714,15 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             }
         }
 
+        switch (rotation) {
+            case Surface.ROTATION_0: rotation = Surface.ROTATION_270; break;
+            case Surface.ROTATION_90: rotation = Surface.ROTATION_0; break;
+            case Surface.ROTATION_180: rotation = Surface.ROTATION_90; break;
+            case Surface.ROTATION_270: rotation = Surface.ROTATION_180; break;
+            default:
+                break;
+        }
+
         return rotation;
     }
 
