@@ -1610,6 +1610,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                         camera_controller = null;
                         camera_open_state = CameraOpenState.CAMERAOPENSTATE_CLOSED;
                         applicationInterface.onCameraError();
+                        reopenCamera();
                     }
                 }
             };
@@ -1810,6 +1811,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             e.printStackTrace();
             applicationInterface.onCameraError();
             closeCamera(false, null);
+            reopenCamera();
             return;
         }
 
